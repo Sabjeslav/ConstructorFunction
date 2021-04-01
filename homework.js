@@ -16,7 +16,7 @@ function Accumulator(startingValue) {
     this.value = 0;
     return;
   }
-  this.value = startingValue;
+  this.value = +startingValue;
 }
 
 Accumulator.prototype = new AccumulatorProto();
