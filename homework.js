@@ -9,8 +9,14 @@ function AccumulatorProto() {
 }
 
 function Accumulator(startingValue) {
+  if (!new.target) {
+    return new Accumulator(startingValue);
+  }
+  if (isNaN(startingValue)) {
+    this.value = 0;
+    return;
+  }
   this.value = startingValue;
-  return this.value;
 }
 
 Accumulator.prototype = new AccumulatorProto();
