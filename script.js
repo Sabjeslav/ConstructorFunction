@@ -15,7 +15,7 @@ function MyArrayProto() {
     for (let i = 0; i < this.length; i++) {
       fn(this[i], i, this);
     }
-  }
+  };
 }
 
 function MyArray() {
@@ -26,15 +26,3 @@ function MyArray() {
 }
 
 MyArray.prototype = new MyArrayProto();
-
-const myarr1 = new MyArray();
-const myarr2 = new MyArray();
-
-
-function summ() {
-  let res = null;
-  for (let i = 0; i<arguments.length; i++) {
-    res += arguments[i];
-  }
-  return res;
-}
